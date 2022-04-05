@@ -30,7 +30,7 @@ dependencies:
   flutter:
     sdk: flutter
   google_mobile_ads: ^1.2.0
-  
+  http: ^0.13.4
   animated_splash_screen: ^1.2.0
 
 
