@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:provider_state_management/provider/todo_provider.dart';
-
 import 'details.dart';
 
 class MyHomePage extends StatelessWidget {
