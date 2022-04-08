@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
-import '../first_screen.dart';
-import '../second_screen.dart';
+import '../screens/first_screen.dart';
+import '../screens/second_screen.dart';
 
 const String firstScreen = "/first-screen";
 const String secondScreen = "/second-screen";
@@ -8,10 +8,10 @@ const String secondScreen = "/second-screen";
 List<GetPage> getPages = [
   GetPage(
       name: firstScreen,
-      page: () => FirstScreen(),
-      transition: Transition.circularReveal),
+      page: () => const FirstScreen(),
+      transition: Transition.size),
   GetPage(
       name: secondScreen,
       page: () => SecondScreen(),
-      transition: Transition.circularReveal)
+      transition: Transition.downToUp)
 ];

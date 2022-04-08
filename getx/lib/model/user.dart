@@ -1,7 +1,17 @@
 class User {
-  String name;
-  String age;
+  String userName;
+  String userAge;
 
-  User({required this.name, required this.age});
-  Map toJson() => {'name': name, 'age': age};
+  Map<String, dynamic> toMap() {
+    return {
+      'name': userName,
+      'age': userAge,
+    };
+  }
+
+  User.fromMap(Map map)
+      : userName = map['name'],
+        userAge = map['age'];
+
+  User({required this.userName, required this.userAge});
 }
