@@ -38,6 +38,17 @@ class SignUp extends StatelessWidget {
                         context, MaterialPageRoute(builder: (_) => SignIn()));
                   },
                   child: Text("Login for existing account")),
+              IconButton(
+                icon: Image.asset(
+                  'assets/images/google.jpg',
+                  height: 100,
+                  width: 100,
+                ),
+                iconSize: 50,
+                onPressed: () {
+                  AuthHelper().signInWithGoogle(context);
+                },
+              )
             ],
           ),
         ),

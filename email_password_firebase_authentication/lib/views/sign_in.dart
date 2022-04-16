@@ -1,5 +1,6 @@
 import 'package:email_password_firebase_authentication/views/sign_up.dart';
 import 'package:flutter/material.dart';
+import 'package:get_storage/get_storage.dart';
 import 'package:motion_toast/motion_toast.dart';
 
 import '../helper/auth_helper.dart';
@@ -9,7 +10,7 @@ class SignIn extends StatelessWidget {
   SignIn({Key? key}) : super(key: key);
   TextEditingController _email = TextEditingController();
   TextEditingController _password = TextEditingController();
-
+  GetStorage box = GetStorage();
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -19,6 +20,7 @@ class SignIn extends StatelessWidget {
           child: Column(
             children: [
               TextField(
+                decoration: InputDecoration(hintText: box.read('email')),
                 controller: _email,
               ),
               TextField(
@@ -33,13 +35,6 @@ class SignIn extends StatelessWidget {
                     final userPassword = _password.text;
                     var obj = AuthHelper();
                     obj.sighIn(userEmail, userPassword, context);
-                    MotionToast.success(
-                      title: Text("Successful"),
-                      description: Text("userEmail has successfully signed in"),
-                      width: 300,
-                      toastDuration: const Duration(seconds: 2),
-                      animationDuration: const Duration(seconds: 2),
-                    ).show(context);
                   },
                   child: Text("Sign In")),
               TextButton(
