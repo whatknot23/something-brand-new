@@ -38,6 +38,7 @@ dependencies:
   motion_toast: ^2.1.6
   get_storage: ^2.0.3
   google_sign_in: ^5.3.0
+  firebase_messaging: ^11.2.13
 
 dev_dependencies:
   flutter_test:
