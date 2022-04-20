@@ -1,3 +1,4 @@
+import 'package:email_password_firebase_authentication/views/course_view.dart';
 import 'package:email_password_firebase_authentication/views/sign_in.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
@@ -107,32 +108,38 @@ class _HomeState extends State<Home> {
                     children: [
                       Container(
                         height: 200,
-                        child: Card(
-                          child: Padding(
-                            padding: const EdgeInsets.all(10.0),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Expanded(
-                                    child: Container(
-                                  width: double.maxFinite,
-                                  child: Image.network(
-                                    data['img'],
-                                    fit: BoxFit.cover,
+                        child: GestureDetector(
+                          onTap: () => Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const CourseView())),
+                          child: Card(
+                            child: Padding(
+                              padding: const EdgeInsets.all(10.0),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Expanded(
+                                      child: Container(
+                                    width: double.maxFinite,
+                                    child: Image.network(
+                                      data['img'],
+                                      fit: BoxFit.cover,
+                                    ),
+                                  )),
+                                  SizedBox(
+                                    height: 5,
                                   ),
-                                )),
-                                SizedBox(
-                                  height: 5,
-                                ),
-                                Text(
-                                  data['course_name'],
-                                  style: TextStyle(
-                                    fontWeight: FontWeight.w600,
-                                    fontSize: 20,
+                                  Text(
+                                    data['course_name'],
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.w600,
+                                      fontSize: 20,
+                                    ),
                                   ),
-                                ),
-                                Text(data['course_details']),
-                              ],
+                                  Text(data['course_details']),
+                                ],
+                              ),
                             ),
                           ),
                         ),

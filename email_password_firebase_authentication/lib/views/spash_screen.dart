@@ -1,5 +1,4 @@
 import 'dart:async';
-
 import 'package:email_password_firebase_authentication/views/home.dart';
 import 'package:email_password_firebase_authentication/views/sign_up.dart';
 import 'package:flutter/material.dart';

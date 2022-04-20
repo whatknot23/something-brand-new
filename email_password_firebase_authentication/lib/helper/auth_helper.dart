@@ -29,7 +29,13 @@ class AuthHelper {
           animationDuration: const Duration(seconds: 2),
         ).show(context);
       } else {
-        print('failed signing up.');
+        MotionToast.error(
+          title: Text("Failed"),
+          description: Text("Unable to sign-up."),
+          width: 300,
+          toastDuration: const Duration(seconds: 2),
+          animationDuration: const Duration(seconds: 2),
+        ).show(context);
       }
     } on FirebaseAuthException catch (e) {
       if (e.code == 'weak-password') {
@@ -48,7 +54,7 @@ class AuthHelper {
           .signInWithEmailAndPassword(email: email, password: password);
       var authCredential = credential.user;
       print(authCredential);
-      if (authCredential!.uid.isNotEmpty) {
+      if (email == authCredential!.email) {
         MotionToast.success(
           title: Text("Successful"),
           description: Text("userEmail has successfully signed in"),

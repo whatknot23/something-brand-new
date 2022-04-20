@@ -1,10 +1,7 @@
 import 'package:email_password_firebase_authentication/views/sign_up.dart';
 import 'package:flutter/material.dart';
 import 'package:get_storage/get_storage.dart';
-import 'package:motion_toast/motion_toast.dart';
-
 import '../helper/auth_helper.dart';
-import 'home.dart';
 
 class SignIn extends StatelessWidget {
   SignIn({Key? key}) : super(key: key);
